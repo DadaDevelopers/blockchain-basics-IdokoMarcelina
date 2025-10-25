@@ -1,0 +1,16 @@
+                    Merkle Root
+                        |
+            +-----------+-----------+
+            |                       |
+        Hash(AB)                Hash(CD)
+            |                       |
+        +---+---+               +---+---+
+        |       |               |       |
+      TxA     TxB             TxC     TxD
+
+Steps:
+1. Start with 4 transaction hashes: A, B, C, D
+2. Compute Hash(AB) = SHA256(SHA256(A + B))
+3. Compute Hash(CD) = SHA256(SHA256(C + D))
+4. Compute Merkle Root = SHA256(SHA256(Hash(AB) + Hash(CD)))
+
